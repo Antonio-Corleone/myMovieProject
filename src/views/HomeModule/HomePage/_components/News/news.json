@@ -1,0 +1,46 @@
+[
+  {
+    "CinemasList": [
+      {
+        "Title": "Marvel mua lại DC",
+        "image": "img/cinemas1.jpg"
+      },
+      {
+        "Title": "Ferdinand",
+        "image": "img/cinemas2.jpg"
+      },
+      {
+        "Title": "Trùm Hương Cảng",
+        "image": "img/cinemas3.jpg"
+      }
+    ],
+    "ReviewsList": [
+      {
+        "Title": "Sự Kiện KFC",
+        "image": "http://billnguyen.com/wp-content/uploads/2014/04/Event-Showcase1-2.jpg"
+      },
+      {
+        "Title": "Sự Kiện Lotte",
+        "image": "https://static.ybox.vn/2018/3/7/6196b406-2228-11e8-b466-56c566ee3692.png"
+      },
+      {
+        "Title": "Sự Kiện Texas",
+        "image": "http://cafefcdn.com/thumb_w/650/2017/2061185419-kien-nhan-1501344528133.jpg"
+      }
+    ],
+    "PromotionsList": [
+      {
+        "Title": "Khuyến Mãi 1",
+        "image": "https://media.vietteltelecom.vn/upload/ckfinder/images/3112.png"
+      },
+      {
+        "Title": "Khuyến Mãi 2",
+        "image": "https://topshare.s3.amazonaws.com/production/posts/pictures/000/000/145/original/kichi-kichi-khuyen-mai.jpg?1502809882"
+      },
+      {
+        "Title": "Khuyến Mãi 3",
+        "image": "http://giaydantuong365.com/uploads/user/2/khuyenmaigiay/khuyen-mai-giay-dan-tuong-dep-gia-re-cuc-soc.jpg"
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+.new__item {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+.new__item img {
+  height: 250px;
+  width: 100%;
+}
+.new__item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  background: rgba(0, 0, 0, 0.2);
+}
+figure.effect-ruby h2 {
+  margin: 0!important;
+  font-size: 25px;
+}
+figure.effect-ruby p {
+  padding: 2em 1rem!important;
+}
