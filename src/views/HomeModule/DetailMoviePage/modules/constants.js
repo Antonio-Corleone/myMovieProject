@@ -1,0 +1,3 @@
+export const DETAIL_MOVIE_REQUEST = "@detailMovie/DETAIL_MOVIE_REQUEST";
+export const DETAIL_MOVIE_SUCCESS = "@detailMovie/DETAIL_MOVIE_SUCCESS";
+export const DETAIL_MOVIE_FAILED = "@detailMovie/DETAIL_MOVIE_FAILED";

@@ -16,7 +16,7 @@ export const actFetchDataHomePage = () => {
     // Get List Showing
     dispatch(actListShowingRequest())
     api
-      .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP05')
+      .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP03')
       .then(result => {
         dispatch(actListShowingSuccess(result.data.content))
       })
@@ -26,7 +26,7 @@ export const actFetchDataHomePage = () => {
     // Get List Coming
     dispatch(actListComingRequest())
     api
-      .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP06')
+      .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP04')
       .then(result => {
         dispatch(actListComingSuccess(result.data.content))
       })

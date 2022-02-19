@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function MovieItem(props) {
   const { movie } = props
@@ -22,7 +23,7 @@ export default function MovieItem(props) {
           <p className="card-text"><span className="text-primary">Giờ khởi chiếu: </span>{new Date(movie.ngayKhoiChieu).toLocaleTimeString()}</p>
         </div>
         <div className="card-footer text-center">
-          <button className="btn btn-success">View Details</button>
+          <Link className="btn btn-success" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
         </div>
       </div>
 

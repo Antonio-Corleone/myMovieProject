@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -100,7 +101,7 @@ export default function NowShowingComponent(props) {
                     />
                     <div className="card-body">
                       <h5 className="card-title">{movie.tenPhim}</h5>
-                      <button className="btn btn-primary mx-2">View Details</button>
+                      <Link className="btn btn-primary mx-2" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
                       <button className="btn btn-secondary mx-2">Book</button>
                     </div>
                   </div>

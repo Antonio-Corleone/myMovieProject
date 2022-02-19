@@ -58,6 +58,7 @@ export default function ContactUsComponent(props) {
             </div>
             <div>
               <iframe
+                title={Date.now()}
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7798.045115917363!2d109.1563100221399!3d12.246751800049095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31705da0f07d6899%3A0x5bdf570bde04386d!2zVGjDoWkgVGjDtG5nLCBWxKluaCBUaMOhaSwgTmhhIFRyYW5nLCBLaGFuaCBIb2EgUHJvdmluY2UsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1645194896212!5m2!1sen!2s"
                 width='100%'
                 height={300}

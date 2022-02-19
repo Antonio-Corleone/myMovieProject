@@ -18,6 +18,12 @@ const routesHome = [
     path: "/list-movie",
     component: lazy(() => import("../views/HomeModule/ListMoviePage")),
   },
+  // detail-movie-package
+  {
+    exact: false,
+    path: "/detail-movie/:id",
+    component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
+  },
 ];
 
 const renderRoutesHome = () => {
