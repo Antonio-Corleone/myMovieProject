@@ -9,13 +9,15 @@ import FooterComponent from './_components/Footer';
 export default function HomePage(props) {
   return (
     <>
+      <div className="bg-warning" style={{ height: '3px' }}></div>
       <CarouselComponent />
+      <div className="bg-warning" style={{ height: '3px' }}></div>
       <MovieTypeComponent />
-      <div className="pb-3"></div>
+      <div className="pb-3 bg-light"></div>
       <NewsComponent />
-      <div className="pb-3"></div>
+      <div className="bg-warning" style={{ height: '3px' }}></div>
       <ContactUsComponent />
-      <FooterComponent />
+      <div className="bg-warning" style={{ height: '3px' }}></div>
     </>
   )
 }

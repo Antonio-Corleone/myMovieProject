@@ -6,7 +6,13 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "red" }}
+      style={{ 
+        ...style, 
+        display: "block", 
+        background: "#F08B23", 
+        borderRadius: '50%'
+
+      }}
       onClick={onClick}
     />
   );
@@ -17,7 +23,13 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "green" }}
+      style={{ 
+        ...style, 
+        display: "block", 
+        background: "#F08B23", 
+        borderRadius: '50%'
+
+      }}
       onClick={onClick}
     />
   );
@@ -66,7 +78,11 @@ export default function NowShowingComponent() {
         <Slider {...settings}>
           <div className="px-2">
             <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/inside-out_gp05.jpg" alt="test" />
+              <img 
+                src="https://movienew.cybersoft.edu.vn/hinhanh/inside-out_gp05.jpg" 
+                alt="test"
+                style={{border: "2px solid green", borderRadius:'3px 3px 0 0'}}
+              />
               <div className="card-body">
                 <h4 className="card-title">Title</h4>
                 <p className="card-text">Text</p>
