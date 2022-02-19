@@ -5,14 +5,13 @@ import './set1.css';
 
 export default function NewItemComponent(props) {
   const { data } = props
-  console.log(props);
   return (
     <div className="row">
       {data.map((item, index) => {
         return (
           <div className="col-md-4" key={index}>
             <div className="grid mix review" style={{ border: '1px solid #000' }} >
-              <a href="#" className="new__item d-block">
+              <a href="/123" className="new__item d-block">
                 <figure className="effect-ruby">
                   <img className="card-img-top" src={item.image} alt={123} />
                   <figcaption>

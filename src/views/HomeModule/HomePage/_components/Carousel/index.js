@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function CarouselComponent(props) {
+  const dataBanner = useSelector(state => state.homePageReducer.dataBanner);
   return (
     <div id="carouselId" className="carousel slide" data-ride="carousel">
       <ol className="carousel-indicators">
@@ -10,13 +12,13 @@ export default function CarouselComponent(props) {
       </ol>
       <div className="carousel-inner" role="listbox">
         <div className="carousel-item active">
-          <img src="https://movienew.cybersoft.edu.vn/hinhanh/ban-tay-diet-quy.png" alt="First slide" width="100%" height="550px"/>
+          <img src={dataBanner&&dataBanner[0].hinhAnh} alt="First slide" width="100%" height="550px" />
         </div>
         <div className="carousel-item">
-          <img src="https://movienew.cybersoft.edu.vn/hinhanh/lat-mat-48h.png" alt="Second slide" width="100%" height="550px"/>
+          <img src={dataBanner&&dataBanner[1].hinhAnh} alt="Second slide" width="100%" height="550px" />
         </div>
         <div className="carousel-item">
-          <img src="https://movienew.cybersoft.edu.vn/hinhanh/cuoc-chien-sinh-tu.png" alt="Third slide" width="100%" height="550px"/>
+          <img src={dataBanner&&dataBanner[2].hinhAnh} alt="Third slide" width="100%" height="550px" />
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">

@@ -15,7 +15,7 @@ export default function MovieTypeComponent(props) {
   return (
     <div className="bg-light">
       <div className="container">
-        <h2 className="text-center pt-3 mb-0" style={{fontWeight: '700'}}>MOVIE SELCTIONS</h2>
+        <h2 className="text-center pt-3 mb-0" style={{fontWeight: '700'}}>MOVIE SELECTION</h2>
         <div className="row">
           <div className="col-md-12 text-center my-3">
             <nav>

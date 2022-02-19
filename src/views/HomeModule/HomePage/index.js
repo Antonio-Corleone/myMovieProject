@@ -1,11 +1,17 @@
-import React from 'react'
-
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux'
+import { actFetchDataHomePage } from '../../HomeModule/HomePage/modules/actions';
 import CarouselComponent from './_components/Carousel';
 import MovieTypeComponent from './_components/MovieType';
 import NewsComponent from './_components/News';
 import ContactUsComponent from './_components/ContactUs';
 
 export default function HomePage(props) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actFetchDataHomePage());
+  }, [dispatch]);
+  
   return (
     <>
       <div className="bg-warning" style={{ height: '3px' }}></div>

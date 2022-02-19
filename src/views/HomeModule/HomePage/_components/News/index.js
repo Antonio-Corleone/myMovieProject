@@ -3,7 +3,6 @@ import NewItemComponent from './NewItem';
 import news from './news.json';
 
 export default function NewsComponent(props) {
-  console.log(news);
   const [showCase, setShowCase] = useState('Cinemas')
   const handleShowCase = (val) => {
     setShowCase(val)

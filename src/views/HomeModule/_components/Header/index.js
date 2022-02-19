@@ -36,7 +36,7 @@ export default function HeaderComponent() {
       <div className="collapse navbar-collapse" id="collapsibleNavId">
         <ul className="navbar-nav mx-auto mt-2 mt-lg-0">
           <NavItem>
-            <NavLink activeClassName="active" className="nav-link px-3" to="/">Home <span className="sr-only">(current)</span></NavLink>
+            <NavLink exact activeClassName="active" className="nav-link px-3" to="/">Home <span className="sr-only">(current)</span></NavLink>
           </NavItem>
           <NavItem>
             <NavLink activeClassName="active" className="nav-link px-3" to="/list-movie">List Movie</NavLink>

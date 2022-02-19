@@ -75,10 +75,10 @@ export default function FooterComponent(props) {
           <div className="col-md-3 pt-4">
             <ListTitle>Follow Us</ListTitle>
             <>
-              <ItemLink> <i style={{fontSize: 40}} class="fa fa-facebook-square"></i></ItemLink>
-              <ItemLink> <i style={{fontSize: 40}} class="fa fa-twitter-square"></i></ItemLink>
-              <ItemLink> <i style={{fontSize: 40}} class="fa fa-youtube-square"></i></ItemLink>
-              <ItemLink> <i style={{fontSize: 40}} class="fa fa-instagram"></i></ItemLink>
+              <ItemLink> <i style={{fontSize: 40}} className="fa fa-facebook-square"></i></ItemLink>
+              <ItemLink> <i style={{fontSize: 40}} className="fa fa-twitter-square"></i></ItemLink>
+              <ItemLink> <i style={{fontSize: 40}} className="fa fa-youtube-square"></i></ItemLink>
+              <ItemLink> <i style={{fontSize: 40}} className="fa fa-instagram"></i></ItemLink>
             </>
           </div>
           <div className="col-md-3 pt-4">

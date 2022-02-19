@@ -1,15 +1,16 @@
 import React from 'react';
 import Slider from "react-slick";
+import { useSelector } from 'react-redux'
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ 
-        ...style, 
-        display: "block", 
-        background: "#F08B23", 
+      style={{
+        ...style,
+        display: "block",
+        background: "#F08B23",
         borderRadius: '50%'
 
       }}
@@ -23,10 +24,10 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ 
-        ...style, 
-        display: "block", 
-        background: "#F08B23", 
+      style={{
+        ...style,
+        display: "block",
+        background: "#F08B23",
         borderRadius: '50%'
 
       }}
@@ -35,14 +36,19 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function NowShowingComponent() {
+export default function NowShowingComponent(props) {
+  const dataListShowing = useSelector(state => state.homePageReducer.dataListShowing)
+  const showingLoading = useSelector(state => state.homePageReducer.showingLoading)
   const settings = {
     dots: true,
+    swipeToSlide: true,
     infinite: false,
-    speed: 500,
+    speed: 2000,
+    lazyLoad: true,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     initialSlide: 0,
+    cssEase: "linear",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -74,73 +80,36 @@ export default function NowShowingComponent() {
   };
   return (
     <div className="row">
-      <div className="col-md-12">
-        <Slider {...settings}>
-          <div className="px-2">
-            <div className="card">
-              <img 
-                src="https://movienew.cybersoft.edu.vn/hinhanh/inside-out_gp05.jpg" 
-                alt="test"
-                style={{border: "2px solid green", borderRadius:'3px 3px 0 0'}}
-              />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="px-2">
-            <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/home-da-sua_gp05.jpg" alt="test" />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="px-2">
-            <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/batman-vs-superman-dawn-of-justice-2_gp05.jpg" alt="test" />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="px-2">
-            <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/ant-man_gp05.jpg" alt="test" />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="px-2">
-            <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/ant-man_gp05.jpg" alt="test" />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="px-2">
-            <div className="card">
-              <img src="https://movienew.cybersoft.edu.vn/hinhanh/ant-man_gp05.jpg" alt="test" />
-              <div className="card-body">
-                <h4 className="card-title">Title</h4>
-                <p className="card-text">Text</p>
-              </div>
-            </div>
-          </div>
-        </Slider>
-      </div>
+      {showingLoading
+        ? <div>Loading...</div>
+        :
+        <div className="col-md-12">
+          <Slider {...settings}>
+            {dataListShowing?.map((movie, index) => {
+              return (
+                <div className="px-2" key={index}>
+                  <div className="card">
+                    <img
+                      src={movie.hinhAnh}
+                      alt="test"
+                      style={{
+                        border: "2px solid green",
+                        borderRadius: '3px 3px 0 0',
+                        height: '350px'
+                      }}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{movie.tenPhim}</h5>
+                      <button className="btn btn-primary mx-2">View Details</button>
+                      <button className="btn btn-secondary mx-2">Book</button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </Slider>
+        </div>
+      }
     </div>
   )
 }
