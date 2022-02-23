@@ -24,6 +24,12 @@ const routesHome = [
     path: "/detail-movie/:id",
     component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
   },
+  // booking page
+  {
+    exact: false,
+    path: "/booking/:showid",
+    component: lazy(() => import("../views/HomeModule/BookingPage")),
+  },
 ];
 
 const renderRoutesHome = () => {

@@ -1,11 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 
+const WrapperMovie = styled.div`
+  @media (max-width:575px) {
+    width: 65%!important;
+    margin: 20px auto !important;
+  }
+  @media (max-width:400px) {
+    width: 85%!important;
+    margin: 20px auto !important;
+  }
+`
 export default function MovieItem(props) {
   const { movie } = props
   return (
     <>
-      <div className="card my-3">
+      <WrapperMovie className="card my-3">
         <img
           className="card-img-top"
           src={movie.hinhAnh}
@@ -25,7 +36,7 @@ export default function MovieItem(props) {
         <div className="card-footer text-center">
           <Link className="btn btn-success" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
         </div>
-      </div>
+      </WrapperMovie>
 
     </>
   )
