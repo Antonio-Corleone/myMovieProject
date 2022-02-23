@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { Rate, Tabs } from 'antd';
 import { actFetchDataDetailMovie } from './modules/actions'
 import '../../../assets/styles/circle.css';
+// import 'antd/dist/antd.min.css';
+import '../../../../node_modules/antd/dist/antd.min.css';
 
 const { TabPane } = Tabs;
 const Wrapper = styled.div`
