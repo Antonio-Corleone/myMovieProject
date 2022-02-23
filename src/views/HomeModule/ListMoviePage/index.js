@@ -8,9 +8,31 @@ export default function ListMoviePage(props) {
   // useEffect(() => {
   //   dispatch(actFetchDataListMovie());
   // }, [dispatch]);
-  
+
   const dataListShowing = useSelector(state => state.homePageReducer.dataListShowing);
   const dataListComing = useSelector(state => state.homePageReducer.dataListComing)
+
+  const renderComingListMovie = () => {
+    const comingList = dataListShowing?.filter(item => item.sapChieu === true);
+    return comingList?.map((movie, index) => {
+      return (
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
+          <MovieItem movie={movie} />
+        </div>
+      )
+    })
+  }
+  const renderShowingListMovie = () => {
+    const showingList = dataListShowing?.filter(item => item.dangChieu === true);
+    return showingList?.map((movie, index) => {
+      return (
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
+          <MovieItem movie={movie} />
+        </div>
+      )
+    })
+
+  }
   const [showStatus, setShowStatus] = useState(true)
   const handleShowStatus = () => {
     setShowStatus(!showStatus)
@@ -57,23 +79,10 @@ export default function ListMoviePage(props) {
           <div className="row">
             {showStatus
               ?
-              // Now showing
-              dataListShowing?.map((movie, index) => {
-                return (
-                  <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
-                    <MovieItem movie={movie} />
-                  </div>
-                )
-              })
+              renderShowingListMovie()
               :
               // Coming soon
-              dataListComing?.map((movie, index) => {
-                return (
-                  <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
-                    <MovieItem movie={movie} />
-                  </div>
-                )
-              })
+              renderComingListMovie()
             }
           </div>
         </div>

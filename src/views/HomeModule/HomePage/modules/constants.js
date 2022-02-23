@@ -4,6 +4,3 @@ export const BANNER_MOVIE_FAILED = "@homePageReducer/BANNER_MOVIE_FAILED";
 export const LIST_SHOWING_REQUEST = "@homePageReducer/LIST_SHOWING_REQUEST";
 export const LIST_SHOWING_SUCCESS = "@homePageReducer/LIST_SHOWING_SUCCESS";
 export const LIST_SHOWING_FAILED = "@homePageReducer/LIST_SHOWING_FAILED";
-export const LIST_COMING_REQUEST = "@homePageReducer/LIST_COMING_REQUEST";
-export const LIST_COMING_SUCCESS = "@homePageReducer/LIST_COMING_SUCCESS";
-export const LIST_COMING_FAILED = "@homePageReducer/LIST_COMING_FAILED";

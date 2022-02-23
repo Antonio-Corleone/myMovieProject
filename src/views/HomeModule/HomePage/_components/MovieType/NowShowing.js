@@ -79,6 +79,32 @@ export default function NowShowingComponent(props) {
       }
     ]
   };
+
+  const renderShowingListMovie = () => {
+    const showingList = dataListShowing?.filter(item => item.dangChieu === true);
+    return showingList?.map((movie, index) => {
+      return (
+        <div className="px-2" key={index}>
+          <div className="card">
+            <img
+              src={movie.hinhAnh}
+              alt="test"
+              style={{
+                border: "2px solid green",
+                borderRadius: '3px 3px 0 0',
+                height: '350px'
+              }}
+            />
+            <div className="card-body">
+              <h5 className="card-title">{movie.tenPhim}</h5>
+              <Link className="btn btn-primary mx-2" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
+              <button className="btn btn-secondary mx-2">Book</button>
+            </div>
+          </div>
+        </div>
+      )
+    })
+  }
   return (
     <div className="row">
       {showingLoading
@@ -86,28 +112,7 @@ export default function NowShowingComponent(props) {
         :
         <div className="col-md-12">
           <Slider {...settings}>
-            {dataListShowing?.map((movie, index) => {
-              return (
-                <div className="px-2" key={index}>
-                  <div className="card">
-                    <img
-                      src={movie.hinhAnh}
-                      alt="test"
-                      style={{
-                        border: "2px solid green",
-                        borderRadius: '3px 3px 0 0',
-                        height: '350px'
-                      }}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{movie.tenPhim}</h5>
-                      <Link className="btn btn-primary mx-2" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
-                      <button className="btn btn-secondary mx-2">Book</button>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+            {renderShowingListMovie()}
           </Slider>
         </div>
       }

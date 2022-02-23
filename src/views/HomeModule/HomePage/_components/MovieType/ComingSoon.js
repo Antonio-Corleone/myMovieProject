@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import { useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -36,8 +36,8 @@ function SamplePrevArrow(props) {
 }
 
 export default function NowShowingComponent(props) {
-  const dataListComing = useSelector(state => state.homePageReducer.dataListComing);
-  const comingLoading = useSelector(state => state.homePageReducer.comingLoading);
+  const dataListShowing = useSelector(state => state.homePageReducer.dataListShowing)
+  const showingLoading = useSelector(state => state.homePageReducer.showingLoading)
   const settings = {
     dots: true,
     swipeToSlide: true,
@@ -77,35 +77,39 @@ export default function NowShowingComponent(props) {
       }
     ]
   };
+  const renderComingListMovie = () => {
+    const comingList = dataListShowing?.filter(item => item.sapChieu === true);
+    return comingList?.map((movie, index) => {
+      return (
+        <div className="px-2" key={index}>
+          <div className="card">
+            <img
+              src={movie.hinhAnh}
+              alt="test"
+              style={{
+                border: "2px solid green",
+                borderRadius: '3px 3px 0 0',
+                height: '350px'
+              }}
+            />
+            <div className="card-body">
+              <h5 className="card-title">{movie.tenPhim}</h5>
+              <Link className="btn btn-primary mx-2" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
+              <button className="btn btn-secondary mx-2">Book</button>
+            </div>
+          </div>
+        </div>
+      )
+    })
+  }
   return (
     <div className="row">
-      {comingLoading
+      {showingLoading
         ? <div>Loading...</div>
         :
         <div className="col-md-12">
           <Slider {...settings}>
-            {dataListComing?.map((movie, index) => {
-              return (
-                <div className="px-2" key={index}>
-                  <div className="card">
-                    <img
-                      src={movie.hinhAnh}
-                      alt="test"
-                      style={{
-                        border: "2px solid green",
-                        borderRadius: '3px 3px 0 0',
-                        height: '350px'
-                      }}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{movie.tenPhim}</h5>
-                      <Link className="btn btn-primary mx-2" to={`/detail-movie/${movie.maPhim}`}>View Details</Link>
-                      <button className="btn btn-secondary mx-2">Book</button>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+            {renderComingListMovie()}
           </Slider>
         </div>
       }

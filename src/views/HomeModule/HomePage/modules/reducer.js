@@ -45,25 +45,7 @@ const homePageReducer = (state = initialState, action) => {
       state.error = action.payload;
       return { ...state }
     }
-
-    case actHomePage.LIST_COMING_REQUEST: {
-      state.comingLoading = true;
-      state.dataListComing = null;
-      state.error = null;
-      return { ...state }
-    }
-    case actHomePage.LIST_COMING_SUCCESS: {
-      state.comingLoading = false;
-      state.dataListComing = action.payload;
-      state.error = null;
-      return { ...state }
-    }
-    case actHomePage.LIST_COMING_FAILED: {
-      state.comingLoading = false;
-      state.dataListComing = null;
-      state.error = action.payload;
-      return { ...state }
-    }
+    
     default:
       return { ...state }
   }

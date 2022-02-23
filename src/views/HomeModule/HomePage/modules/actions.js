@@ -23,16 +23,6 @@ export const actFetchDataHomePage = () => {
       .catch(error => {
         dispatch(actListShowingFailed(error))
       })
-    // Get List Coming
-    dispatch(actListComingRequest())
-    api
-      .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP04')
-      .then(result => {
-        dispatch(actListComingSuccess(result.data.content))
-      })
-      .catch(error=> {
-        dispatch(actListComingFailed(error))
-      })
   };
 };
 
@@ -63,20 +53,5 @@ const actListShowingSuccess = (data) => ({
 
 const actListShowingFailed = (error) => ({
   type: actHomePage.LIST_SHOWING_FAILED,
-  payload: error
-});
-
-// List Coming actions
-const actListComingRequest = () => ({
-  type: actHomePage.LIST_COMING_REQUEST
-});
-
-const actListComingSuccess = (data) => ({
-  type: actHomePage.LIST_COMING_SUCCESS,
-  payload: data
-});
-
-const actListComingFailed = (error) => ({
-  type: actHomePage.LIST_COMING_FAILED,
   payload: error
 });
