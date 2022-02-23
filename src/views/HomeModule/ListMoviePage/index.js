@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import MovieItem from './MovieItem';
-import { actFetchDataListMovie } from './modules/actions';
+// import { actFetchDataListMovie } from './modules/actions';
 
 export default function ListMoviePage(props) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(actFetchDataListMovie());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(actFetchDataListMovie());
+  // }, [dispatch]);
   
-  const dataListShowing = useSelector(state => state.listMoviePageReducer.dataListShowing);
-  const dataListComing = useSelector(state => state.listMoviePageReducer.dataListComing)
+  const dataListShowing = useSelector(state => state.homePageReducer.dataListShowing);
+  const dataListComing = useSelector(state => state.homePageReducer.dataListComing)
   const [showStatus, setShowStatus] = useState(true)
   const handleShowStatus = () => {
     setShowStatus(!showStatus)

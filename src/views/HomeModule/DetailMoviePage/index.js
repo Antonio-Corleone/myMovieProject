@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 `
 export default function DetailMoviePage(props) {
   const id = props.match.params.id;
-  const data = useSelector(state => state.detailMovieReducer.data)
+  // const data = useSelector(state => state.detailMovieReducer.data)
   const showTime = useSelector(state => state.detailMovieReducer.showTime)
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function DetailMoviePage(props) {
       <Wrapper
         className="pt-5"
         style={{
-          backgroundImage: `url("${data && data.hinhAnh}")`,
+          backgroundImage: `url("${showTime && showTime.hinhAnh}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           overflow: 'hidden',
@@ -42,22 +42,22 @@ export default function DetailMoviePage(props) {
           <div className="col-md-12 col-lg-6">
             <div className="row justify-content-center">
               <div className="col-md-4 justify-content-center text-center">
-                <img className='img-fluid' src={data && data.hinhAnh} alt={data && data.hinhAnh} />
+                <img className='img-fluid' src={showTime && showTime.hinhAnh} alt={showTime && showTime.hinhAnh} />
               </div>
               <div className="col-md-6 text-left align-self-center py-3">
-                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Tên phim: </span>{data && data.tenPhim}</p>
-                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Mô tả: </span>{data && data.moTa}</p>
-                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Ngày khởi chiếu: </span>{new Date(data && data.ngayKhoiChieu).toLocaleDateString()}</p>
+                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Tên phim: </span>{showTime && showTime.tenPhim}</p>
+                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Mô tả: </span>{showTime && showTime.moTa}</p>
+                <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Ngày khởi chiếu: </span>{new Date(showTime && showTime.ngayKhoiChieu).toLocaleDateString()}</p>
               </div>
             </div>
           </div>
           <div className="col-md-12 col-lg-4">
             <div className="row justify-content-center">
-              <Rate allowHalf defaultValue={data && data.danhGia / 2} />
+              <Rate allowHalf defaultValue={showTime && showTime.danhGia / 2} />
             </div>
             <div className="row mt-3 justify-content-center">
-              <div className={`c100 p${data && data.danhGia / 10 * 100} big`}>
-                <span>{data && data.danhGia / 10 * 100}%</span>
+              <div className={`c100 p${showTime && showTime.danhGia / 10 * 100} big`}>
+                <span>{showTime && showTime.danhGia / 10 * 100}%</span>
                 <div className="slice">
                   <div className="bar" />
                   <div className="fill" />
