@@ -19,17 +19,17 @@ const routesHome = [
     component: lazy(() => import("../views/HomeModule/ListMoviePage")),
   },
   // detail-movie-package
-  {
-    exact: false,
-    path: "/detail-movie/:id",
-    component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
-  },
+  // {
+  //   exact: false,
+  //   path: "/detail-movie/:id",
+  //   component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
+  // },
   // booking page
-  {
-    exact: false,
-    path: "/booking/:showid",
-    component: lazy(() => import("../views/HomeModule/BookingPage")),
-  },
+  // {
+  //   exact: false,
+  //   path: "/booking/:showid",
+  //   component: lazy(() => import("../views/HomeModule/BookingPage")),
+  // },
 ];
 
 const renderRoutesHome = () => {
