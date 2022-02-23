@@ -2,7 +2,6 @@
 import { lazy } from "react";
 // modules
 import HomeModule from '../views/HomeModule';
-// import HomePage from '../views/HomeModule/HomePage'
 
 const routesHome = [
   //home page
@@ -19,11 +18,11 @@ const routesHome = [
     component: lazy(() => import("../views/HomeModule/ListMoviePage")),
   },
   // detail-movie-package
-  // {
-  //   exact: false,
-  //   path: "/detail-movie/:id",
-  //   component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
-  // },
+  {
+    exact: false,
+    path: "/detail-movie/:id",
+    component: lazy(() => import("../views/HomeModule/DetailMoviePage")),
+  },
   // booking page
   // {
   //   exact: false,
