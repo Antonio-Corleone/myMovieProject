@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import "../../../../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../../../../node_modules/slick-carousel/slick/slick-theme.css";
+
 import NowShowingComponent from './NowShowing';
 import ComingSoonComponent from './ComingSoon';
 

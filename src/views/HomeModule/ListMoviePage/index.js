@@ -10,7 +10,7 @@ export default function ListMoviePage(props) {
   // }, [dispatch]);
 
   const dataListShowing = useSelector(state => state.homePageReducer.dataListShowing);
-  const dataListComing = useSelector(state => state.homePageReducer.dataListComing)
+  // const dataListComing = useSelector(state => state.homePageReducer.dataListComing)
 
   const renderComingListMovie = () => {
     const comingList = dataListShowing?.filter(item => item.sapChieu === true);

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkimovie=self.webpackChunkimovie||[]).push([[352],{9352:function(n,e,i){i.r(e),i.d(e,{default:function(){return o}});i(2791);var u=i(184);function o(n){return(0,u.jsx)("div",{children:"BookingPageComponent"})}}}]);
-//# sourceMappingURL=352.3e1ca327.chunk.js.map
