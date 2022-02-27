@@ -26,7 +26,7 @@ export default function NewsComponent(props) {
     }
   }
   return (
-    <div className="bg-light" style={{borderRadius: '3px'}}>
+    <div className="bg-light container-xl" style={{borderRadius: '3px'}}>
       <div className="container">
       <h2 className="text-center pt-3 mb-0" style={{fontWeight: '700'}}>NEWS &amp; EVENTS</h2>
         <div className="row">

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 export default function CarouselComponent(props) {
   const dataBanner = useSelector(state => state.homePageReducer.dataBanner);
   return (
-    <div id="carouselId" className="carousel slide" data-ride="carousel">
+    <div id="carouselId" className="carousel slide container-xl px-0" data-ride="carousel">
       <ol className="carousel-indicators">
         <li data-target="#carouselId" data-slide-to={0} className="active" />
         <li data-target="#carouselId" data-slide-to={1} />

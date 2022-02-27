@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory  } from 'react-router-dom';
 import style from 'styled-components';
 
 const NavItem = style.li`
@@ -17,8 +17,9 @@ const NavItem = style.li`
 `
 
 export default function HeaderComponent() {
+  const history = useHistory();
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light py-0 px-4">
+    <nav className="navbar navbar-expand-sm navbar-light bg-light py-0 px-4 container-xl">
       <Link
         className="navbar-brand"
         to="/"
@@ -49,7 +50,7 @@ export default function HeaderComponent() {
           </NavItem>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">LOGIN</button>
+          <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={()=> {history.push('/signin')}}>LOGIN</button>
         </form>
       </div>
     </nav>

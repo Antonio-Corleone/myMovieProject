@@ -31,13 +31,13 @@ export default function DetailMoviePage(props) {
   }, [dispatch, id]);
   return (
     <>
-      <div className="bg-warning" style={{ height: '3px' }}></div>
+      <div className="bg-warning container-xl" style={{ height: '3px' }}></div>
       {loading
         ?
         <div>Loading...</div>
         :
         <Wrapper
-          className="pt-5"
+          className="pt-5 container-xl px-0"
           style={{
             backgroundImage: `url("${showTime && showTime.hinhAnh}")`,
             backgroundSize: 'cover',
@@ -48,12 +48,26 @@ export default function DetailMoviePage(props) {
             <div className="col-md-12 col-lg-6">
               <div className="row justify-content-center">
                 <div className="col-md-4 justify-content-center text-center">
-                  <img className='img-fluid' src={showTime && showTime.hinhAnh} alt={showTime && showTime.hinhAnh} />
+                  <img
+                    className='img-fluid mb-4'
+                    src={showTime && showTime.hinhAnh}
+                    alt={showTime && showTime.hinhAnh}
+                    style={{
+                      border: '3px solid rgba(255, 255, 255,0.8)',
+                      borderRadius: '3px'
+                    }}
+                  />
                 </div>
-                <div className="col-md-6 text-left align-self-center py-3">
-                  <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Tên phim: </span>{showTime && showTime.tenPhim}</p>
-                  <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Mô tả: </span>{showTime && showTime.moTa}</p>
-                  <p className="text-success px-5 px-sm-5 px-md-0"><span className="text-warning">Ngày khởi chiếu: </span>{new Date(showTime && showTime.ngayKhoiChieu).toLocaleDateString()}</p>
+                <div className="col-md-6 text-left align-self-center py-3" style={{ background: 'rgba(0,0,0,0.6)', borderRadius: '5px' }}>
+                  <p className="text-success px-5 px-sm-5 px-md-0">
+                    <span className="text-warning">Tên phim: </span>{showTime && showTime.tenPhim}
+                  </p>
+                  <p className="text-success px-5 px-sm-5 px-md-0">
+                    <span className="text-warning">Mô tả: </span>{showTime && showTime.moTa}
+                  </p>
+                  <p className="text-success px-5 px-sm-5 px-md-0">
+                    <span className="text-warning">Ngày khởi chiếu: </span>{new Date(showTime && showTime.ngayKhoiChieu).toLocaleDateString()}
+                  </p>
                 </div>
               </div>
             </div>
@@ -140,7 +154,7 @@ export default function DetailMoviePage(props) {
         </Wrapper>
       }
 
-      <div className="bg-warning" style={{ height: '3px' }}></div>
+      <div className="bg-warning container-xl" style={{ height: '3px' }}></div>
     </>
   )
 }

@@ -30,7 +30,7 @@ const ItemLink = styled.a`
 
 export default function FooterComponent(props) {
   return (
-    <div style={{ background: 'rgba(0, 0, 0, 0.8)' }}>
+    <div style={{ background: 'rgba(0, 0, 0, 0.8)' }} className="container-xl">
       <div className="container">
         <div className="row">
           <div className="col-md-3 pt-4">

@@ -40,8 +40,8 @@ export default function ListMoviePage(props) {
 
   return (
     <>
-      <div className="bg-warning" style={{ height: '3px' }}></div>
-      <div className="bg-light">
+      <div className="bg-warning container-xl" style={{ height: '3px' }}></div>
+      <div className="bg-light container-xl">
         <div className="container">
           <h2 className="pt-3 mb-0" style={{ fontWeight: '700' }}>MOVIE LIST</h2>
           <div className="row">

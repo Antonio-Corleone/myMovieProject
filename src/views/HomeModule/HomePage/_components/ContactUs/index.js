@@ -3,6 +3,7 @@ import React from 'react'
 export default function ContactUsComponent(props) {
   return (
     <div
+      className="container-xl"
       style={{
         backgroundImage: 'url("img/background-contact.jpg")',
         backgroundSize: 'cover',
