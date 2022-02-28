@@ -24,7 +24,6 @@ export default function DetailMoviePage(props) {
 
   const showTime = useSelector(state => state.detailMovieReducer.showTime)
   const loading = useSelector(state => state.detailMovieReducer.loading)
-  console.log(loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actFetchDataDetailMovie(id));

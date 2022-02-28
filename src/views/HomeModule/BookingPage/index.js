@@ -12,8 +12,7 @@ const Screen = styled.div`
 `
 
 export default function BookingPageComponent(props) {
-  const userLogin = JSON.parse(localStorage.getItem("UserLogin")).content;
-  console.log(userLogin);
+  const userLogin = JSON.parse(localStorage.getItem("UserLogin"))?.content;
   return (
     <>
       {
