@@ -33,7 +33,7 @@ export default function FooterComponent(props) {
     <div style={{ background: 'rgba(0, 0, 0, 0.8)' }} className="container-xl">
       <div className="container">
         <div className="row">
-          <div className="col-md-3 pt-4">
+          <div className="col-12 col-sm-6 col-lg-3 pt-4">
             <ListTitle>IMV Vietnam</ListTitle>
             <HeaderList>
               <ListItem>
@@ -53,7 +53,7 @@ export default function FooterComponent(props) {
               </ListItem>
             </HeaderList>
           </div>
-          <div className="col-md-3 pt-4">
+          <div className="col-12 col-sm-6 col-lg-3 pt-4">
             <ListTitle>Terms and Conditions</ListTitle>
             <HeaderList>
               <ListItem>
@@ -73,7 +73,7 @@ export default function FooterComponent(props) {
               </ListItem>
             </HeaderList>
           </div>
-          <div className="col-md-3 pt-4">
+          <div className="col-12 col-sm-6 col-lg-3 pt-4">
             <ListTitle>Follow Us</ListTitle>
             <>
               <ItemLink> <i style={{fontSize: 40}} className="fa fa-facebook-square"></i></ItemLink>
@@ -82,7 +82,7 @@ export default function FooterComponent(props) {
               <ItemLink> <i style={{fontSize: 40}} className="fa fa-instagram"></i></ItemLink>
             </>
           </div>
-          <div className="col-md-3 pt-4">
+          <div className="col-12 col-sm-6 col-lg-3 pt-4">
             <ListTitle>Customer Service</ListTitle>
             <HeaderList>
               <ListItem>Hotline: 1900 6017</ListItem>

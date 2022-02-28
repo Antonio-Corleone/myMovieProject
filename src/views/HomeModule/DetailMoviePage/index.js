@@ -125,7 +125,7 @@ export default function DetailMoviePage(props) {
                               <div className="row pt-3">
                                 {show?.lichChieuPhim.slice(0, 12).map((showItem) => {
                                   return (
-                                    <div className="col-md-3 py-3" key={showItem.maLichChieu}>
+                                    <div className="col-6 col-md-4 col-lg-3 py-3" key={showItem.maLichChieu}>
                                       <NavLink to={`/booking/${showItem.maLichChieu}`}>
                                         {new Date(showItem.ngayChieuGioChieu).toLocaleDateString()}
                                         <br />

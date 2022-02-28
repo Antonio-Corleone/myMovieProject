@@ -7,7 +7,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { renderRoutesHome } from './routes';
 import PageNotFound from './views/PageNotFound';
 import AuthPage from './views/AdminModule/AuthPage';
-import FormModal from "./views/FormModal";
+import SignIn from './views/FormModal/SignIn';
+import SignUp from './views/FormModal/SignUp';
+import BookingPage from './views/HomeModule/BookingPage'
 
 function App() {
   return (
@@ -15,8 +17,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           {renderRoutesHome()}
-          <Route path="/signin" component={FormModal} />
-          <Route path="/signup" component={FormModal} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/booking/:showid" component={BookingPage} />
           <Route path="/auth" component={AuthPage} />
           <Route path="" component={PageNotFound} />
         </Switch>
