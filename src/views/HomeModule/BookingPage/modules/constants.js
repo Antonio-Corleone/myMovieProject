@@ -1,0 +1,4 @@
+export const BOOKING_TICKET_REQUEST = "@bookingPage/BOOKING_TICKET_REQUEST";
+export const BOOKING_TICKET_SUCCESS = "@bookingPage/BOOKING_TICKET_SUCCESS";
+export const BOOKING_TICKET_FAILED = "@bookingPage/BOOKING_TICKET_FAILED";
+export const BOOKING_TICKET_BOOK = "@bookingPage/BOOKING_TICKET_BOOK";
