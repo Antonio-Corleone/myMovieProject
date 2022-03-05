@@ -1,5 +1,6 @@
 //import library
 import React, { Suspense } from "react";
+import { useSelector } from 'react-redux';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -9,12 +10,15 @@ import PageNotFound from './views/PageNotFound';
 import AuthPage from './views/AdminModule/AuthPage';
 import SignIn from './views/FormModal/SignIn';
 import SignUp from './views/FormModal/SignUp';
-import BookingPage from './views/HomeModule/BookingPage'
+import BookingPage from './views/HomeModule/BookingPage';
+import Loading from './components/Loading/Loading';
 
 function App() {
+  const loading = useSelector(state => state.loadingReducer.loadingStatus);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <BrowserRouter>
+        {loading?<Loading />:null}
         <Switch>
           {renderRoutesHome()}
           <Route path="/signin" component={SignIn} />

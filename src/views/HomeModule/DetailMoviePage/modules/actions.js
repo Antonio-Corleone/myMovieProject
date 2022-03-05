@@ -1,18 +1,22 @@
 import * as actDetailMovie from './constants';
 import api from '../../../../utils/apiUtils';
+import { actShowLoading, actHideLoading } from '../../../../components/Loading/modules/actions'
 
 export const actFetchDataDetailMovie = (id) => {
   return (dispatch) => {
     dispatch(actShowTimeRequest());
+    dispatch(actShowLoading());
     api
       .get(`QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
-      .then(result =>{
+      .then(result => {
         // console.log(result);
         dispatch(actShowTimeSuccess(result.data.content));
+        dispatch(actHideLoading());
       })
       .catch(error => {
         // console.log(error);
         dispatch(actShowTimeFailed(error))
+        dispatch(actHideLoading());
       })
   }
 };

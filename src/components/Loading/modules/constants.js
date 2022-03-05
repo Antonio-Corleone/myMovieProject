@@ -1,0 +1,2 @@
+export const ACTION_SHOW_LOADING = "@loading/ACTION_SHOW_LOADING";
+export const ACTION_HIDE_LOADING = "@loading/ACTION_HIDE_LOADING";

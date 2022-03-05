@@ -21,3 +21,10 @@
 .chair-vip{
   background-color: rgb(228,74,8);
 }
+
+.chair-user{
+  background-color: rgb(246,246,246);
+  box-shadow: -1px 2px 18px -6px #000;
+  color: orange !important;
+  border: 1px solid orange;
+}

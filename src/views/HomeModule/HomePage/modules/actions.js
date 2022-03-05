@@ -1,27 +1,34 @@
 import api from "../../../../utils/apiUtils";
 import * as actHomePage from './constants';
+import { actShowLoading, actHideLoading } from '../../../../components/Loading/modules/actions';
 
 export const actFetchDataHomePage = () => {
   return (dispatch) => {
     // Get Banner
     dispatch(actBannerMovieRequest());
+    dispatch(actShowLoading());
     api
       .get('QuanLyPhim/LayDanhSachBanner')
       .then(result => {
         dispatch(actBannerMovieSuccess(result.data.content))
+        dispatch(actHideLoading());
       })
       .catch(error => {
         dispatch(actBannerMovieFailed(error))
+        dispatch(actHideLoading());
       })
     // Get List Showing
     dispatch(actListShowingRequest())
+    dispatch(actShowLoading());
     api
       .get('QuanLyPhim/LayDanhSachPhim?maNhom=GP03')
       .then(result => {
-        dispatch(actListShowingSuccess(result.data.content))
+        dispatch(actListShowingSuccess(result.data.content));
+        dispatch(actHideLoading());
       })
       .catch(error => {
-        dispatch(actListShowingFailed(error))
+        dispatch(actListShowingFailed(error));
+        dispatch(actHideLoading());
       })
   };
 };

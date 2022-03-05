@@ -23,7 +23,7 @@ export default function DetailMoviePage(props) {
   const id = props.match.params.id;
 
   const showTime = useSelector(state => state.detailMovieReducer.showTime)
-  const loading = useSelector(state => state.detailMovieReducer.loading)
+  const loading = useSelector(state => state.loadingReducer.loadingStatus)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actFetchDataDetailMovie(id));
@@ -33,7 +33,7 @@ export default function DetailMoviePage(props) {
       <div className="bg-warning container-xl" style={{ height: '3px' }}></div>
       {loading
         ?
-        <div>Loading...</div>
+        null
         :
         <Wrapper
           className="pt-5 container-xl px-0"
